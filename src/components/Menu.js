@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'font-awesome/css/font-awesome.css';
-import './Menu.css'
+import './css/Menu.css'
 
 class Menu extends Component {
   render() {

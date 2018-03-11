@@ -2,6 +2,7 @@ nav {
   background-color: #fff;
   overflow: hidden;
   padding: 1em;
+  margin-bottom: 40px;
 }
 nav a {
   color: #99a1ab;
