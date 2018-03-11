@@ -19,7 +19,7 @@ class Trainings extends Component {
   }
 
   renderTraining(training) {
-    return (<div onClick={this.handleClick} className="training-wrap  col-md-3 col-sm-4 col-6 col-lg-2">
+    return (<div onClick={this.handleClick.bind(this, training.id)} className="training-wrap  col-md-3 col-sm-4 col-6 col-lg-2">
       <div className="training-short">
         <div>Title: {training.title}</div>
         <div>Date: {training.date}</div>
@@ -28,8 +28,8 @@ class Trainings extends Component {
     </div>);
   }
 
-  handleClick() {
-
+  handleClick(id) {
+    this.props.handleClick(id);
   }
 }
 

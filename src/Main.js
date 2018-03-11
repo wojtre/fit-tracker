@@ -7,14 +7,28 @@ import Trainings from './components/Trainings';
 import Training from './components/Training';
 import {default as UUID} from "uuid";
 
-
 class Main extends Component {
   render() {
     return (<div className="main">
       <Menu/>
-      <Trainings trainings={this.state.trainings}/>
-      <Training training={this.state.trainings[1]}/>
+        {this.renderContent()}
     </div>);
+  }
+
+  renderContent() {
+    if (this.state.currentTraining) {
+      return (<Training training={this.state.currentTraining}/>);
+    } else {
+      return (<Trainings trainings={this.state.trainings} handleClick={this.handleTrainingsClick.bind(this)}/>);
+    }
+  }
+
+  handleTrainingsClick(id) {
+    let currentTr = this.state.trainings.filter((tr) => {
+      return tr.id === id;
+
+    })[0];
+    this.setState({currentTraining: currentTr});
   }
 
   constructor() {

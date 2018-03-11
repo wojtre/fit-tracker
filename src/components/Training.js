@@ -11,18 +11,17 @@ class Training extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      training: props.training
-    };
   }
 
   renderTraining() {
-    if (!this.state.training.exercises || this.state.training.exercises.length < 1) {
-      return (<div className="exercise">No exercises</div>);
+    if (this.props.training) {
+      if (!this.props.training.exercises || this.props.training.exercises.length < 1) {
+        return (<div className="exercise">No exercises</div>);
+      }
+      return this.props.training.exercises.map((ex) => {
+        return this.renderEx(ex);
+      });
     }
-    return this.state.training.exercises.map((ex) => {
-      return this.renderEx(ex);
-    });
   }
 
   renderEx(ex) {
