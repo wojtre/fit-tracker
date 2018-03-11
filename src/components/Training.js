@@ -17,6 +17,9 @@ class Training extends Component {
   }
 
   renderTraining() {
+    if (!this.state.training.exercises || this.state.training.exercises.length < 1) {
+      return (<div className="exercise">No exercises</div>);
+    }
     return this.state.training.exercises.map((ex) => {
       return this.renderEx(ex);
     });
@@ -31,7 +34,7 @@ class Training extends Component {
 
   renderSeries(series, unit) {
     return series.map((s, i) => {
-      return (<div>Series {i+1}: {s}
+      return (<div>Series {i + 1}: {s}
         {unit}
       </div>);
     });

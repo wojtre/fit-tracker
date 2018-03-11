@@ -13,7 +13,7 @@ class Main extends Component {
     return (<div className="main">
       <Menu/>
       <Trainings trainings={this.state.trainings}/>
-      <Training training={this.state.trainings[0]}/>
+      <Training training={this.state.trainings[1]}/>
     </div>);
   }
 
