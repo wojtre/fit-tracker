@@ -4,6 +4,7 @@ import './Main.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Menu from './components/Menu';
 import Trainings from './components/Trainings';
+import Training from './components/Training';
 import {default as UUID} from "uuid";
 
 
@@ -12,6 +13,7 @@ class Main extends Component {
     return (<div className="main">
       <Menu/>
       <Trainings trainings={this.state.trainings}/>
+      <Training training={this.state.trainings[0]}/>
     </div>);
   }
 
