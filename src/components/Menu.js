@@ -1,31 +1,37 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import 'font-awesome/css/font-awesome.css';
+import './Menu.css'
 
 class Menu extends Component {
   render() {
-    return (<div className="container">
-      <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light">
-        <a className="navbar-brand" href="#">Fit tracker</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="#">Trainings<span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="#">Statistics</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" href="#">Settings</a>
-            </li>
-          </ul>
+    return (<nav >
+      <div className="navWide">
+        <div className="wideDiv">
+          <a href="#">Trainings</a>
+          <a href="#">Statistics</a>
+          <a href="#">Settings</a>
         </div>
-      </nav>
-    </div>);
+      </div>
+      <div className="navNarrow">
+        <i className="fa fa-bars fa-2x" onClick={this.burgerToggle}></i>
+        <div className="narrowLinks">
+          <a href="#" onClick={this.burgerToggle}>Trainings</a>
+          <a href="#" onClick={this.burgerToggle}>Statistics</a>
+          <a href="#" onClick={this.burgerToggle}>Settings</a>
+        </div>
+      </div>
+    </nav>);
+  }
+
+  burgerToggle() {
+    let linksEl = document.querySelector('.narrowLinks');
+    if (linksEl.style.display === 'block') {
+      linksEl.style.display = 'none';
+    } else {
+      linksEl.style.display = 'block';
+    }
   }
 
 }
