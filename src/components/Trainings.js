@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './css/Trainings.css'
 import 'bootstrap/dist/js/bootstrap.js';
+
+
 class Trainings extends Component {
   render() {
     return (<div className="trainings">
@@ -26,8 +28,6 @@ class Trainings extends Component {
       </div>
     </div>);
   }
-
-
 }
 
 export default Trainings;
