@@ -1,5 +1,9 @@
 .training-short {
-  padding: 30px;
+  padding:15px;
   background-color: #4484ce;
-  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+}
+.training-wrap {
+  padding: 2px;
 }
