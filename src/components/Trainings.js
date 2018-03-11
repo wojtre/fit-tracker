@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './css/Trainings.css'
 import 'bootstrap/dist/js/bootstrap.js';
-import {default as UUID} from "uuid";
 class Trainings extends Component {
   render() {
     return (<div className="trainings">
@@ -13,7 +12,7 @@ class Trainings extends Component {
   }
 
   renderTrainings() {
-    return this.state.trainings.map((training) => {
+    return this.props.trainings.map((training) => {
       return this.renderTraining(training);
     });
   }
@@ -28,64 +27,7 @@ class Trainings extends Component {
     </div>);
   }
 
-  constructor() {
-    super();
-    this.state = {
-      trainings: [
-        {
-          id: UUID.v4(),
-          date: "21-02-2018",
-          title: "klata",
-          exercises: [
-            {
-              name: "wyciskanie",
-              series: [
-                90, 90, 80, 90
-              ],
-              unit: "kg"
-            }, {
-              name: "rospietki",
-              series: [
-                50, 50, 50
-              ],
-              unit: "kg"
-            }
-          ]
 
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2017",
-          title: "klata",
-          exercises: []
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2016",
-          title: "klata",
-          exercises: []
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2016",
-          title: "klata",
-          exercises: []
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2016",
-          title: "klata",
-          exercises: []
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2016",
-          title: "klata",
-          exercises: []
-        }, {
-          id: UUID.v4(),
-          date: "21-02-2016",
-          title: "klata",
-          exercises: []
-        }
-      ]
-    }
-  }
 }
 
 export default Trainings;
