@@ -5,3 +5,10 @@
   border: 2px solid;
   color: #fff;
 }
+
+.training-title{
+  padding-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #aaa;
+}

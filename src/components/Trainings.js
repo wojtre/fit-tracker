@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
 import './css/Trainings.css'
 import 'bootstrap/dist/js/bootstrap.js';
+import 'font-awesome/css/font-awesome.css'
 
 class Trainings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      trainings: props.trainings
+    }
+  }
   render() {
     return (<div className="trainings">
       <div className="container">
+        <div className="add-training">
+          <i class="fa fa-plus"></i>
+        </div>
         <div className="row">
           {this.renderTrainings()}</div>
       </div>
@@ -13,7 +23,7 @@ class Trainings extends Component {
   }
 
   renderTrainings() {
-    return this.props.trainings.map((training) => {
+    return this.state.trainings.map((training) => {
       return this.renderTraining(training);
     });
   }

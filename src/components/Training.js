@@ -5,7 +5,10 @@ import 'bootstrap/dist/js/bootstrap.js';
 class Training extends Component {
   render() {
     return (<div className="trainings">
-      <div className="container">{this.renderTraining()}</div>
+      <div className="container">
+        <h2 className="training-title">{this.props.training.title}
+        </h2>
+        {this.renderTraining()}</div>
     </div>);
   }
 
