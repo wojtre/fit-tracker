@@ -9,6 +9,7 @@ class Training extends Component {
         <h2 className="training-title">{this.props.training.title}
         </h2>
         {this.renderTraining()}</div>
+      <button className="add-element-button" title="add new exercise"><i class="fa fa-plus"></i></button>
     </div>);
   }
 

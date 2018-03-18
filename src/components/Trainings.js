@@ -19,12 +19,10 @@ class Trainings extends Component {
       </h1>
 
       <div className="container">
-        <div className="row">
-          {this.renderTrainings()}</div>
-      </div>
-      <button className="add-training-button" title="add new training"><i class="fa fa-plus"></i>
-
- </button>
+        {this.renderTrainings()}</div>
+      <button className="add-element-button" title="add new training">
+        <i class="fa fa-plus"></i>
+      </button>
     </div>);
   }
 
@@ -35,15 +33,14 @@ class Trainings extends Component {
   }
 
   renderTraining(training) {
-    return (<div onClick={this.handleClick.bind(this, training.id)}
-    className="training-wrap  col-md-12 col-sm-12 col-12 col-lg-12">
-      <div className="training-short">
-        <div>Title: {training.title}</div>
-        <div>Date: {training.date}
-                </div>
-        <div>Exercises: {training.exercises.length}</div>
-     <span className=" training-control "><i className="fa fa-trash"></i></span>
+    return (<div className="training-short" onClick={this.handleClick.bind(this, training.id)}>
+      <div>Title: {training.title}</div>
+      <div>Date: {training.date}
       </div>
+      <div>Exercises: {training.exercises.length}</div>
+      <span className="training-control">
+        <i className="fa fa-trash"></i>
+      </span>
     </div>);
   }
 
