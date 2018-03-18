@@ -4,12 +4,13 @@ import 'bootstrap/dist/js/bootstrap.js';
 import 'font-awesome/css/font-awesome.css';
 import {Redirect} from 'react-router-dom';
 import trainingsStore from "../store/Store"
+import {default as UUID} from "uuid";
 
 class Trainings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trainings: trainingsStore
+      trainings: trainingsStore.getStore()
     }
   }
   render() {
@@ -22,7 +23,7 @@ class Trainings extends Component {
 
       <div className="container">
         {this.renderTrainings()}</div>
-      <button className="add-element-button" title="add new training">
+      <button className="add-element-button" title="add new training" onClick={this.addNewTraining.bind(this)}>
         <i class="fa fa-plus"></i>
       </button>
     </div>);
@@ -36,7 +37,7 @@ class Trainings extends Component {
 
   renderTraining(training) {
     return (<div className="training-short">
-      <div  onClick={this.handleClick.bind(this, training.id)}>
+      <div onClick={this.handleClick.bind(this, training.id)}>
         <div>Title: {training.title}</div>
         <div>Date: {training.date}
         </div>
@@ -48,11 +49,28 @@ class Trainings extends Component {
     </div>);
   }
 
-removeTraining(training) {
-  let trainings = this.state.trainings;
-  trainings.splice(trainings.indexOf(training), 1)
-  this.setState({trainings: trainings});
-}
+  removeTraining(training) {
+    let trainings = this.state.trainings;
+    trainings.splice(trainings.indexOf(training), 1);
+    trainingsStore.setStore(trainings);
+    this.setState({trainings: trainings});
+  }
+
+  addNewTraining() {;
+    let train = {
+      id: UUID.v4(),
+      date: "21-02-2016",
+      title: "new training",
+      exercises: []
+    };
+    let trainings = [train].concat(this.state.trainings);
+    trainingsStore.setStore(trainings);
+    this.setState({
+      trainings: trainings
+    }, () => {
+      this.props.history.push(`/training/${train.id}`)
+    });
+  }
 
   handleClick(id) {
     this.props.history.push(`/training/${id}`);

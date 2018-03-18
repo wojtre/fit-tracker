@@ -51,7 +51,7 @@ class Training extends Component {
   }
 
   getTraining(id) {
-    return trainingsStore.filter((tr) => {
+    return trainingsStore.getStore().filter((tr) => {
       return tr.id === id;
 
     })[0];

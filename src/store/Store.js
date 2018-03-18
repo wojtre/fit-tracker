@@ -1,6 +1,6 @@
 import {default as UUID} from "uuid";
 
-const trainingsStore =[
+let trainingsStore =[
     {
       id: UUID.v4(),
       date: "21-02-2018",
@@ -121,4 +121,17 @@ const trainingsStore =[
     }
   ];
 
-  export default trainingsStore;
+  const getStore = ()=>{
+    return trainingsStore;
+  }
+
+  const setStore = (newStore) => {
+    trainingsStore = newStore;
+  }
+
+  const functions = {
+    getStore: getStore,
+    setStore: setStore
+  }
+
+  export default functions;
