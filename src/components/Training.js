@@ -19,7 +19,7 @@ class Training extends Component {
   renderTraining() {
     if (this.props.training) {
       if (!this.props.training.exercises || this.props.training.exercises.length < 1) {
-        return (<div className="exercise">No exercises</div>);
+        return (<div className="exercise">Add exercise</div>);
       }
       return this.props.training.exercises.map((ex) => {
         return this.renderEx(ex);

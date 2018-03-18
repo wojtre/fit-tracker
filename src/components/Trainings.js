@@ -32,7 +32,7 @@ class Trainings extends Component {
   }
 
   renderTraining(training) {
-    return (<div onClick={this.handleClick.bind(this, training.id)} className="training-wrap  col-md-3 col-sm-4 col-6 col-lg-2">
+    return (<div onClick={this.handleClick.bind(this, training.id)} className="training-wrap  col-md-12 col-sm-12 col-12 col-lg-12">
       <div className="training-short">
         <div>Title: {training.title}</div>
         <div>Date: {training.date}</div>

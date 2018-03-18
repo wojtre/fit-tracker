@@ -83,6 +83,31 @@ class Main extends Component {
           date: "21-02-2016",
           title: "klata",
           exercises: []
+        }, {
+          id: UUID.v4(),
+          date: "21-02-2016",
+          title: "klata",
+          exercises: []
+        }, {
+          id: UUID.v4(),
+          date: "21-02-2016",
+          title: "klata",
+          exercises: []
+        }, {
+          id: UUID.v4(),
+          date: "21-02-2016",
+          title: "klata",
+          exercises: []
+        }, {
+          id: UUID.v4(),
+          date: "21-02-2016",
+          title: "klata",
+          exercises: []
+        }, {
+          id: UUID.v4(),
+          date: "21-02-2016",
+          title: "klata",
+          exercises: []
         }
       ]
     }
