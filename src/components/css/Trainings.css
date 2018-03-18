@@ -12,3 +12,9 @@
   cursor: pointer;
   padding: 2px;
 }
+
+.trainings h1 {
+  color: #f4f4f4;
+  text-align: center;
+  font-weight: 600;
+}

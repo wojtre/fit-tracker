@@ -12,6 +12,7 @@ class Trainings extends Component {
   }
   render() {
     return (<div className="trainings">
+    <h1>FIT TRACKER</h1>
       <div className="container">
         <div className="row">
           {this.renderTrainings()}</div>
