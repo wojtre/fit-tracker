@@ -1,14 +1,15 @@
 .exercise {
   padding:15px;
-  background-color: #4484ce;
-  border-radius: 10px;
-  border: 2px solid;
-  color: #fff;
+  background-color: #282C35;
+  border-radius: 5px;
+  color: #b7c4d0;
+  border-left: 5px solid #e5445b;
+  margin-bottom: 5px;
 }
 
 .training-title{
   padding-bottom: 15px;
   text-align: center;
   text-transform: uppercase;
-  color: #aaa;
+  color: #b7c4d0;
 }
