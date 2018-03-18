@@ -9,7 +9,7 @@ import {default as UUID} from "uuid";
 class Main extends Component {
   render() {
     return (<div className="main">
-        {this.renderContent()}
+      {this.renderContent()}
     </div>);
   }
 
@@ -39,6 +39,48 @@ class Main extends Component {
           title: "klata",
           exercises: [
             {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
+              name: "wyciskanie",
+              series: [
+                90, 90, 80, 90
+              ],
+              unit: "kg"
+            }, {
               name: "wyciskanie",
               series: [
                 90, 90, 80, 90

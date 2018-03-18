@@ -38,7 +38,7 @@ class Trainings extends Component {
       <div>Date: {training.date}
       </div>
       <div>Exercises: {training.exercises.length}</div>
-      <span className="training-control">
+      <span className="training-control" title="delete training">
         <i className="fa fa-trash"></i>
       </span>
     </div>);
