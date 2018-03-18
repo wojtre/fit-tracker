@@ -35,16 +35,24 @@ class Trainings extends Component {
   }
 
   renderTraining(training) {
-    return (<div className="training-short" onClick={this.handleClick.bind(this, training.id)}>
-      <div>Title: {training.title}</div>
-      <div>Date: {training.date}
+    return (<div className="training-short">
+      <div  onClick={this.handleClick.bind(this, training.id)}>
+        <div>Title: {training.title}</div>
+        <div>Date: {training.date}
+        </div>
+        <div>Exercises: {training.exercises.length}</div>
       </div>
-      <div>Exercises: {training.exercises.length}</div>
       <span className="training-control" title="delete training">
-        <i className="fa fa-trash"></i>
+        <i className="fa fa-trash" onClick={this.removeTraining.bind(this, training)}></i>
       </span>
     </div>);
   }
+
+removeTraining(training) {
+  let trainings = this.state.trainings;
+  trainings.splice(trainings.indexOf(training), 1)
+  this.setState({trainings: trainings});
+}
 
   handleClick(id) {
     this.props.history.push(`/training/${id}`);
