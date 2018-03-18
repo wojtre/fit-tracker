@@ -22,6 +22,9 @@ class Trainings extends Component {
         <div className="row">
           {this.renderTrainings()}</div>
       </div>
+      <button className="add-training-button" title="add new training"><i class="fa fa-plus"></i>
+
+ </button>
     </div>);
   }
 
