@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import './css/Trainings.css'
 import 'bootstrap/dist/js/bootstrap.js';
-import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.css';
+import {Redirect} from 'react-router-dom';
+import trainingsStore from "../store/Store"
 
 class Trainings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trainings: props.trainings
+      trainings: trainingsStore
     }
   }
   render() {
@@ -45,7 +47,7 @@ class Trainings extends Component {
   }
 
   handleClick(id) {
-    this.props.handleClick(id);
+    this.props.history.push(`/training/${id}`);
   }
 }
 
