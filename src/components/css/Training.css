@@ -1,5 +1,5 @@
 .exercise {
-  padding:15px;
+  padding: 15px;
   background-color: #282C35;
   border-radius: 5px;
   color: #b7c4d0;
@@ -8,10 +8,35 @@
   font-weight: 600;
 }
 
-.training-title{
+.training-title {
   font-weight: 600;
   padding-bottom: 15px;
   text-align: center;
   text-transform: uppercase;
   color: #f4f4f4;
+
+
+}
+.training-title .editable {
+    padding: 0px 100px 5px 100px;
+}
+
+.training .editable {
+  background: linear-gradient(0deg, #e5445b, #e5445b) bottom center no-repeat;
+  background-size: 0px 3px;
+  transition: 0.5s ease-out;
+  text-decoration: none;
+
+}
+
+.training .editable[contenteditable="true"]:active, .training .editable[contenteditable="true"]:focus {
+  background-size: 100% 2px;
+  font-size: 140%;
+}
+
+.training .editable-sm[contenteditable="true"]:active, .training .editable-sm[contenteditable="true"]:focus {
+  background-size: 100% 2px;
+  font-size: 140%;
+  padding: 0px 10px 5px 10px;
+
 }

@@ -6,9 +6,10 @@ import trainingsStore from "../store/Store"
 class Training extends Component {
   render() {
 
-    return (<div className="trainings">
+    return (<div className="training">
       <div className="container">
-        <h2 className="training-title">{this.state.training.title}
+        <h2 className="training-title">
+          <span className="editable" spellcheck="false" contenteditable="true" >{this.state.training.title}</span>
         </h2>
         {this.renderTraining()}</div>
       <button className="add-element-button" title="add new exercise">
@@ -37,15 +38,17 @@ class Training extends Component {
 
   renderEx(ex) {
     return (<div className="exercise">
-      <div>{ex.name}</div>
+      <span  spellcheck="false" className="editable editable-sm" contenteditable="true">{ex.name}</span>
       {this.renderSeries(ex.series, ex.unit)}
     </div>)
   }
 
   renderSeries(series, unit) {
     return series.map((s, i) => {
-      return (<div>Series {i + 1}: {s}
-        {unit}
+      return (<div >
+        <span>Series {i + 1}:</span>
+        <span spellcheck="false" className="editable editable-sm" contenteditable="true">{s}</span>
+        <span>{unit}</span>
       </div>);
     });
   }
