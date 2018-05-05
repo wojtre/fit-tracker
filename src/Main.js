@@ -6,7 +6,7 @@ import Trainings from './components/Trainings';
 import Training from './components/Training';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import trainingsStore from "./store/Store"
-import { init as firebaseInit } from './database/firebase'
+import { init as firebaseInit, addTraining as addTraining } from './database/firebase'
 import { Provider } from 'react-redux'
 import configureStore from './components/configureStore'
 

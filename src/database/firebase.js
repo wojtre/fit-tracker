@@ -11,7 +11,7 @@ export const init = () => {
         messagingSenderId: "538577210428"
     }
     firebase.initializeApp(config)
-    database.firebase.database()
+    database = firebase.database()
 }
 
 export const getTrainingsDB = () => {
@@ -30,15 +30,15 @@ export const addTraining = (training) => {
 }
 
 export const addExercise = (trainingId, exercise) => {
-    return new Promise((resolve, reject)=>{
-        database.ref(`/${trainingId}`.once('value').then((training)=>{
+    return new Promise((resolve, reject) => {
+        database.ref(`/${trainingId}`.once('value').then((training) => {
             let exercises = training.val().exercises || []
             let key = database.ref(`/${trainingId}`).push().key
             exercise.id = key
             exercises.push(exercise)
             database.ref(`/${trainingId}/exercises`).set(exercises)
-            .then(res =>{resolve(res)})
-            .catch(error => {reject(error)})
+                .then(res => { resolve(res) })
+                .catch(error => { reject(error) })
         }))
     })
 }
