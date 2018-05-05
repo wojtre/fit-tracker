@@ -24,7 +24,7 @@ class Trainings extends Component {
       <div className="container">
         {this.renderTrainings()}</div>
       <button className="add-element-button" title="add new training" onClick={this.addNewTraining.bind(this)}>
-        <i class="fa fa-plus"></i>
+        <i className="fa fa-plus"></i>
       </button>
     </div>);
   }
